@@ -26,7 +26,12 @@ This Project is based on building a game by using HTML,CSS and JAVASCRIPT. I alw
  <li>The word Snake Classic located at the top of the board will generate different color in every time interval</li>
  
  </ol>
+
+
  <h2>WIREFRAME</h2>
+
+ <img src='snake.png'>
+ <img src='snake2.png'>
 
 
 
