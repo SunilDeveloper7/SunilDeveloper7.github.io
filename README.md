@@ -70,16 +70,31 @@ This Project is based on building a game by using HTML,CSS and JAVASCRIPT. I alw
 <h2><u>MVP CHECKLIST</u></h2>
 <ul>
 <li>
-Start tracking - who eat the most apple 
+ I want to change the display screen when i choose my character in the first display screen 
 </li>
-<br>
-<li>I want a history log that keeps track of all the games played</li>
 <br>
 <li>
-I want fancy styling and animations when ever snake eat the apple or bump on the wall or obstracel on away.
+ If i press start in my second window game should start
 </li>
 <br>
+ <li>snake direction is controlled my arrow butoon so everytime I press the arrow button snake will change the direction 
+ </li>
+ <br>
+ <li>
+  when snake bump on the red wall snake's game is over
+ </li>
+ <br>
+ <li>
+  when snake eat the apple its body will increment by +1 until the highest score if the game over is false
+ </li>
+ <br>
+ <li>Live score tracking board 
+ </li>
+ <br>
+ <li>Maybe reset button to reset the game for next game
+ </li>
 </ul>
+
 
 <h2><u>STRETCH GOAL</u></h2>
 <ul>
