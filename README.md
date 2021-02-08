@@ -5,7 +5,7 @@ This Project is based on building a game by using HTML,CSS and JAVASCRIPT. I alw
 
 <h2>GAME RULES</h2> 
  Snake game has no hard rules to offer. The rule of the game are very simple and easy. Please see below the game rules and how to play it.
- <ol>
+ <ul>
   <br>
  <li>Select option between snake character on your first display window.
  </li>
@@ -36,7 +36,7 @@ This Project is based on building a game by using HTML,CSS and JAVASCRIPT. I alw
   <br>
  <li>The word Snake Classic located at the top of the board will generate different color in every time interval</li>
  
- </ol>
+ </ul>
 
 
  <h2>WIREFRAME</h2>
