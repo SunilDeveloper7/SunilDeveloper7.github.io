@@ -80,7 +80,17 @@ I want fancy styling and animations when ever snake eat the apple or bump on the
 </ul>
 
 <h2><u>STRETCH GOAL</u></h2>
-
+<ul>
+ <li>
+  To add background sounds where user will here it when something unique happen in the game board like collision or while eating apple or when scoring highest point.
+ </li>
+ <br>
+ <li>To add a double screen for both player X and O and can be played at the same time in the display.
+ </li>
+ <br>
+ <li>Add multiple character of snake to select for users.
+  </li>
+  </ul>
 
 
 
