@@ -93,10 +93,7 @@ This Project is based on building a game by using HTML,CSS and JAVASCRIPT. I alw
  <br>
  <li>Maybe reset button to reset the game for next game
  </li>
- <br>
- <li>
- </li>
-</ul>
+ </ul>
 
 
 <h2><u>STRETCH GOAL</u></h2>
