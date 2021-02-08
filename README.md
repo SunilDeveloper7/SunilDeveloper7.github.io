@@ -4,7 +4,9 @@
 This Project is based on building a game by using HTML,CSS and JAVASCRIPT. I always wanted to create a game which i use to play when i was a little kid. Snake board is very fun game and was so famous back in 90's.
 
 <h2>GAME RULES</h2> 
- Snake game has no hard rules to offer. The rule of the game are very simple and easy. Please see below the game rules and how to play it.
+ Snake game has no hard rules to offer.It is a 2d game created by  canvas.
+ <br>
+ The rule of the game are very simple and easy. Please see below the game rules and how to play it.
  <ul>
   <br>
  <li>Select option between snake character on your first display window.
