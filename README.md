@@ -77,7 +77,7 @@ This Project is based on building a game by using HTML,CSS and JAVASCRIPT. I alw
  If i press start in my second window game should start
 </li>
 <br>
- <li>snake direction is controlled my arrow butoon so everytime I press the arrow button snake will change the direction 
+ <li>snake direction is controlled my arrow button so everytime I press the arrow button snake will change the direction 
  </li>
  <br>
  <li>
@@ -92,6 +92,9 @@ This Project is based on building a game by using HTML,CSS and JAVASCRIPT. I alw
  </li>
  <br>
  <li>Maybe reset button to reset the game for next game
+ </li>
+ <br>
+ <li>
  </li>
 </ul>
 
