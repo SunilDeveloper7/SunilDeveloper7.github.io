@@ -44,7 +44,45 @@ This Project is based on building a game by using HTML,CSS and JAVASCRIPT. I alw
 <img src='snake2.png'>
 <br>
 <img src='snake.png'>
- 
+ <H2><u>USER STORIES</u></H2>
+
+<ul>
+<li>
+(As a user) I want to select the character from my first displayed window.
+</li>
+<br>
+<li>After selecting the character I will enter the main game window and press start to play the game</li>
+<br>
+<li>I will try to eat the apple which will randomly appear in the game board and try not to bump in the wall or obstracals.
+</li>
+<br>
+<li>I will try to score to score more until i hit 10 points to win .
+</li>
+<br>
+<li>I would like to see the live score board updated everytime i eat the apple.
+</li>
+<br>
+<li> When i finish my game as a user i want player z to start the game and compare the end score for winner.</li>
+</ul>
+
+<h2><u>MVP CHECKLIST</u></h2>
+<ul>
+<li>
+Start tracking - who eat the most apple 
+</li>
+<br>
+<li>I want a history log that keeps track of all the games played</li>
+<br>
+<li>
+I want fancy styling and animations when ever snake eat the apple or bump on the wall or obstracel on away.
+</li>
+<br>
+</ul>
+
+<h2><u>STRETCH GOAL</u></h2>
+
+
+
 
  
 
