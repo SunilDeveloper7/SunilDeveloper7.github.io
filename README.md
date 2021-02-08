@@ -41,9 +41,9 @@ This Project is based on building a game by using HTML,CSS and JAVASCRIPT. I alw
 
  <h2>WIREFRAME</h2>
 
- <img src='snake.png'>
- <br>
- <img src='snake2.png'>
+<img src='snake2.png'>
+<br>
+<img src='snake.png'>
  
 
  
