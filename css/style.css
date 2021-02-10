@@ -1,0 +1,54 @@
+body {
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: green;
+    line-height: 2;
+    background-color: black;
+    
+}
+
+.img {
+    width: 250px;
+    height:250px
+    
+}
+
+.first {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-decoration:underline;
+}
+
+#showcase {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    }
+
+    .Cobra , .rattle {
+        text-align:center;
+        width:200px;
+        background-color:brown;
+        height:50px;
+        border:100px;
+        font-weight: 600;
+        text-indent:auto;
+        letter-spacing: 5px;
+        margin-right:10px ;
+    }
+
+
+    .Cobra, .rattle {
+        cursor: pointer;
+    }
+    
+    .rattle:hover {
+        color: #f00e47;
+    }
+
+    .Cobra:hover {
+        color: #F2EBD3;
+    }
