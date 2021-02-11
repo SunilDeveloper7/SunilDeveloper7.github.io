@@ -10,7 +10,7 @@ body {
 img {
 width:300px;
 height:150px;
-margin-top:100px;
+margin-top:50px;
 margin-bottom: 0px;
 }
 
@@ -21,7 +21,48 @@ canvas {
 
 }
 
+.btn1 {
+    text-align:center;
+    width:200px;
+    background-color:lightgreen;
+    height:50px;
+    border:100px;
+    font-weight: 600;
+    text-indent:auto;
+    letter-spacing: 5px;
+    margin-right:10px ;
+    margin-top:15px;
+    }
 
+
+    .btn1 {
+        cursor: pointer;
+    }
+    
+    .btn1:hover {
+        color:white;
+    }
+    .btn2 {
+        text-align:center;
+        width:200px;
+        background-color:blue;
+        height:50px;
+        border:100px;
+        font-weight: 600;
+        text-indent:auto;
+        letter-spacing: 5px;
+        margin-right:10px ;
+        margin-top:15px;
+        }
+    
+    
+        .btn2 {
+            cursor: pointer;
+        }
+        
+        .btn2:hover {
+            color:white;
+        }
 
 
 

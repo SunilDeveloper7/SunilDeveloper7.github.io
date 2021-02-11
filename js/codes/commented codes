@@ -1,0 +1,89 @@
+//constant
+//Game logic variable & state
+//Dom reference
+// Function and game Logic
+//Event listner
+
+// const box = 25;
+// const canvasSize = 23;
+
+
+// canvas.width = 1000;
+// canvas.height = 600;
+// var btn = document.createElement("BUTTON");   // Create a <button> element
+// btn.classList.add("btn1");  // Add a highlight class
+// btn.innerHTML = "Start";                   // Insert text
+// document.body.appendChild(btn);               // Append <button> to <body>
+
+
+
+
+
+  // ctx.fillStyle = 'red'
+    // ctx.fillRect(700,60,50,200);
+    // ctx.fillRect(200,200,50,300);
+    // ctx.fillRect(400,60,100,50);
+    // ctx.fillRect(800,450,50,50);
+    // ctx.fillRect(500,350,50,200);
+    // ctx.fillRect(0,300,50,100);
+    // ctx.fillRect(500,60,50,200);
+
+    // function collisionTest() {
+//     console.log('x is:',snake.x,apple.appleX,'y is',snake.y,apple.appleY);
+
+// }
+
+
+// function drawSnake() {
+// //     ctx.fillStyle = 'orange';
+// //     ctx.fillRect(headX * tileCount,snake.y* tileCount,tileSize,tileSize);
+// }
+
+// function changeSnakePosition() {
+//     headX = headX + xVelocity;
+//     headY = headY + yVelocity;
+// }
+// function drawApple() {
+//     ctx.fillStyle = 'blue';
+//     ctx.fillRect (apple.x*tileCount,appleY*tileCount,tileSize,tileSize)
+// }
+
+
+// function checkAppleCollision() {
+//     let appleLeft = snake.x + snake.width >= apple.x
+//     // console.log('appleLeft',appleLeft);
+
+//     let appleRight =snake.x <=apple.x +apple.width
+//     // console.log('appleRight', appleRight)
+
+//     let checkX = appleLeft && appleRight
+//     //console.log(check)
+
+//     let appleTop = snake.y +snake.height >=apple.y
+//     // console.log('appleTop' ,appleTop);
+//     let appleBottom = snake.y <=apple.y + apple.height
+//     // console.log('appleBottom',appleBottom);
+//     let checkY = appleTop && appleBottom
+//     // console.log(checkY)
+
+//     let checkXY = checkY && checkX
+//     console.log(checkXY);
+
+// //     if(
+//         //left
+//         snake.x + snake.width >= apple.x &&
+//         //right
+//         snake.x <=apple.x + apple.width &&
+//         //top
+//         snake.y + snake.height >= apple.y &&
+//         //bottom
+//         snake.y <= apple.y + appple.height
+//         ) {
+//         //do something
+//         console.log('checkAppleCollision');
+    
+
+//         }
+
+//     }
+
