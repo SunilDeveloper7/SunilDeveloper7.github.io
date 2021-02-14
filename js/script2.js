@@ -1,17 +1,17 @@
+// let newCobra = document.querySelector('.cobra');
+
+// function nameFun() {
+//     console.log('its working');
+// }
 
 
-
+// newCobra.addEventListener('click', nam);
 
 
 var btns = document.createElement("BUTTON");   // Create a <button> element
 btns.classList.add("btn2");  // Add a highlight class
 btns.innerHTML = "Reset";                   // Insert text
 document.body.appendChild(btns);               // Append <button> to <body>
-
-
-
-
-
 
 
 const canvas = document.getElementById('canvas');
@@ -30,8 +30,13 @@ let yVelocity =0;
 let score =0;
 let snakeParts =[];
 let gameOver = false;
-// const collisionSound = new Audio("gulp.mp3");
-
+// let eatSound;
+// let collisionSound 
+let snake =null;
+let apple =null;
+let newSp =null;
+let newSnake =[];
+let tailLength = 1;
 
 
 
@@ -43,7 +48,7 @@ class Snake {
         this.xVelocity = 0;
         this.yVelocity = 0;
         this.color=color;
-        this.width = tileSize;
+    
 
     }
     render() {
@@ -52,33 +57,8 @@ class Snake {
         this.x = this.x + this.xVelocity;
         this.y = this.y + this.yVelocity;
     }
-    grow() {
-        // snakeParts.push(this.x,this.y,this.color,tileSize,tileSize);
-        ctx.fillStyle =this.color;
-        for(let i=0; i <snakeParts.length; i++) {
-        ctx.fillRect(snakeParts[i].x * tileSize,snakeParts[i].y * tileSize,tileSize,tileSize);
-            
-
-        }
-        // ctx.fillRect(this.x,this.y,tileSize,tileSize);
-        
-        
-        snakeParts.push({x:this.x,y:this.y})
-        
-        // this.width += tileSize;
-        
-
-        // console.log(snakeParts);
-    }
 }
-let snake = new Snake(5,5,'green');
-console.log(snake);
 
-
-
-    
-
-    
 class Apple {
     constructor(x,y,color) {
         this.x = x;
@@ -93,68 +73,80 @@ class Apple {
 
     }
 }
-let apple = new Apple(10,10,'pink');
-console.log(apple);
 
 
-
+class Snakepart{
+	constructor(x,y,color){
+		this.x = x;
+		this.y = y;
+		this.color = color;
+		// this.color =color
+	}
+	render() {
+		ctx.fillStyle = 'red';
+		for(let i=0; i<snakeParts.length; i++) {
+			let part =snakeParts[i];
+			ctx.fillRect(part.x * tileCount, part.y *tileCount,tileSize,tileSize);
+			// ctx.fillStyle = 'red';
+			
+			
+		}
+		snakeParts.push(new Snakepart(snake.x,snake.y))
+		if(snakeParts.length > tailLength) {
+			snakeParts.shift();
+		}
+	}
+}
 
 
 
 function drawGame() {
-    // let result = isGameOver();
-    // if(result){
-    //     return;
-    // }
-    // isGameOver()
     if(gameOver === false) {
         clearScreen();
         apple.render();
         snake.render();
+        newSp.render();
         checkAppleCollision();
         checkWallCollision()
-        // if(snake.xVelocity || snake.yVelocity) {
-        //     for (let i=0; i < snakeParts.length; i++) {
-        //         snakeParts[i].render();
-        //         checkBodyCollision(snakeParts[i]);
-        //     }
-            
-
-        // }
     }
-    // snaketail()
-    // advanceSnake()
     drawScore()
     checkForGameOver()
-    
-
-
-
-setTimeout(drawGame,1000/speed);
+    // handleReset()
+    setTimeout(drawGame,1000/speed);
 
 }
-
-
 function clearScreen(){
     ctx.fillStyle = 'black';
     ctx.fillRect(0,0,canvas.width,canvas.height);
 }
 
-
-
-
 function checkAppleCollision() {
     // console.log('x is:',snake.x,apple.x,'y is',snake.y,apple.y);
     if(apple.x === snake.x && apple.y == snake.y) {
         score +=1;
+        tailLength++;
 
         // console.log('collision');
-        apple.x =Math.floor(Math.random() * tileCount);
-        apple.y =Math.floor(Math.random() * tileCount);
-        snake.grow();
-    }
+        apple.x =Math.floor(Math.random() * tileSize);
+        apple.y =Math.floor(Math.random() * tileSize);
+        // snake.grow();
+        
+    }   
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function checkWallCollision() {
     // console.log(snake.y);
@@ -168,6 +160,7 @@ function checkWallCollision() {
     }else if(snake.y >tileCount - 14){
         console.log('BOTTOM CANVAS' );
     }
+    
 }
 
 
@@ -192,22 +185,45 @@ function checkForGameOver() {
         
         if(snake.x < 0){
             gameOver = true;
+            ctx.fillStyle = "green";
+            ctx.font = "25px Adorn serif";
+            ctx.fillText("Game is Over you hit LEFT wall", canvas.width /6.5, canvas.height / 2);
+            ctx.fillText(`Your Score is ${score}`, canvas.width /4, canvas.height / 1.5);
             
-        
         
         }else if(snake.x > tileCount + 2){
             gameOver = true;
+            ctx.fillStyle = "Red";
+            ctx.font = "25px Adorn serif";
+            ctx.fillText("Game is Over you hit the RIGHT wall", canvas.width /6.5, canvas.height / 2);
+            ctx.fillText(`Your Score is ${score}` , canvas.width /4, canvas.height / 1.5);
+            
             
         }else if(snake.y <0){
             gameOver = true;
+            ctx.fillStyle = "Red";
+            ctx.font = "25px Adorn serif";
+            ctx.fillText("Game is Over you hit the TOP wall", canvas.width /6.5, canvas.height / 2);
+            ctx.fillText(`Your Score is ${score}`, canvas.width /4, canvas.height / 1.5);
+        
+            
 
         }else if(snake.y >tileCount - 14){
             gameOver = true;
+            ctx.fillStyle = "Red";
+            ctx.font = "25px Adorn serif";
+            ctx.fillText("Game is Over you hit the BOTTOM wall", canvas.width /6.5, canvas.height / 2);
+            ctx.fillText(`Your Score is ${score}` , canvas.width /4, canvas.height / 1.5);
+            
+
         }else if(snakeParts.x === snake.x && snakeParts.y == snake.y) {
             gameOver = true;
-    } 
-
-        if(gameOver === true) {
+            ctx.fillStyle = "Red";
+            ctx.font = "25px Adorn serif";
+            ctx.fillText("Game is Over you hit your self", canvas.width /6.5, canvas.height / 2);
+            ctx.fillText(`Your Score is ${score}` , canvas.width /4, canvas.height / 1.5);
+        
+        } else if(gameOver === true) {
         ctx.fillStyle = "white";
         ctx.font = "50px Verdana";
 
@@ -224,7 +240,7 @@ function checkForGameOver() {
             ctx.fillStyle = gradient;
         
             ctx.fillText("Game Over!", canvas.width /3, canvas.height / 2);
-            ctx.fillText("You total score is" , canvas.width /3, canvas.height / 1.5);
+            ctx.fillText(`Your Score is ${score}`, canvas.width /3, canvas.height / 1.5);
 
         }else if(score === 10){
             ctx.fillStyle = "blue";
@@ -238,8 +254,8 @@ function checkForGameOver() {
             ctx.fillStyle = gradient;
         
             ctx.fillText("Congrats", canvas.width /3, canvas.height / 2);
-            ctx.fillText("You Hit The highest Score " , canvas.width /4, canvas.height / 1.5);
-            checkForGameOver()
+            ctx.fillText(`Your Score is ${score}. Great Hit the highest score` , canvas.width /4, canvas.height / 1.5);
+        
 
             
         }
@@ -249,21 +265,6 @@ function checkForGameOver() {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
 function drawScore(){
 
     if(score <= 3 ){
@@ -337,20 +338,41 @@ function keyDown(event) {
     }
     // event listeners
 
+
+
+
+}
+function init() {
+    gameOver = false;
+    score =0;
+    snakeParts=[];
+    snake = new Snake(5,5,'green');
+    apple = new Apple(10,10,'pink');
+    newSp = new Snakepart(5,5,'red');
+    console.log('init');
 }
 
 
 
 
 
-function handleReset() {
-    console.log('Reset the game');
-}
-    
 
 
-// event listeners
-btns.addEventListener('click', handleReset);
+//event listeners
+btns.addEventListener('click', init);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+init();
 drawGame();
