@@ -1,11 +1,30 @@
-// let newCobra = document.querySelector('.cobra');
+// let statusEl =document.querySelector('.status')
 
-// function nameFun() {
-//     console.log('its working');
-// }
+// statusEl.addEventListener('click',function(e) {
+//     localStorage.setItem('status', '.status');
+// })
 
 
-// newCobra.addEventListener('click', nam);
+let img0 = document.querySelector('.img');
+
+let imgPath  = localStorage.getItem('img');
+// console.log(imgPath);
+
+img0.setAttribute('src', imgPath); 
+
+
+
+// let title0 = document.querySelector('.title');
+
+// let titlePath = localStorage.getItem('title');
+
+// title0.setAttribute('src',titlePath);
+
+
+
+
+
+
 
 
 var btns = document.createElement("BUTTON");   // Create a <button> element
@@ -36,7 +55,7 @@ let snake =null;
 let apple =null;
 let newSp =null;
 let newSnake =[];
-let tailLength = 1;
+let tailLength = 0;
 
 
 
@@ -242,7 +261,7 @@ function checkForGameOver() {
             ctx.fillText("Game Over!", canvas.width /3, canvas.height / 2);
             ctx.fillText(`Your Score is ${score}`, canvas.width /3, canvas.height / 1.5);
 
-        }else if(score === 10){
+        }else if(score === 5){
             ctx.fillStyle = "blue";
             ctx.font = "60px georgia ";
 
@@ -260,7 +279,7 @@ function checkForGameOver() {
             
         }
     
-        
+
     
     }
 
@@ -276,21 +295,23 @@ function drawScore(){
     else if(score === 5 ){
         speed = 5;
     }
-    else if(score === 6 ){
-        speed = 6;
-    }
-    else if(score === 7 ){
-        speed = 7;
-    }
-    else if(score === 8 ){
-        speed = 8;
-    }
-    else if(score === 9 ){
-        speed = 9;
-    }
-    else if(score === 10 ){
-        speed = 10;
-    }
+
+
+    // else if(score === 6 ){
+    //     speed = 6;
+    // }
+    // else if(score === 7 ){
+    //     speed = 7;
+    // }
+    // else if(score === 8 ){
+    //     speed = 8;
+    // }
+    // else if(score === 9 ){
+    //     speed = 9;
+    // }
+    // else if(score === 10 ){
+    //     speed = 10;
+    // }
     // else (checkWallCollision === snake){
     //     gameOver =true;
     // }
@@ -299,6 +320,9 @@ function drawScore(){
     ctx.fillStyle = "white";
     ctx.font = "10px Verdana"
     ctx.fillText("Score " + score, canvas.width-50, 10);
+
+
+    snake.render() === false;
 
 
 }

@@ -1,3 +1,7 @@
+html {
+    background-image: url("../img.png/skin1.jpg");
+}
+
 body {
     margin:0px;
     padding:0px;
@@ -5,7 +9,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(203, 211, 211);
+    
+
 }
 
 img {
@@ -18,6 +23,7 @@ margin-bottom: 0px;
 canvas {
     
     box-shadow: black 20px 10px 50px;
+    
     /* width: 768;
     height: 512; */
 
@@ -68,7 +74,12 @@ canvas {
         }
 
 
-
+.status {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px ;
+    font-style: italic;
+    color: blue;
+}
 
 /* body {
     background-color: black;
