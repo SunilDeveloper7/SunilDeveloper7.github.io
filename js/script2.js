@@ -322,7 +322,7 @@ function drawScore(){
     ctx.fillText("Score " + score, canvas.width-50, 10);
 
 
-    snake.render() === false;
+
 
 
 }
