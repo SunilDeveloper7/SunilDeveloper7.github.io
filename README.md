@@ -72,9 +72,6 @@ This Project is based on building a game by using HTML,CSS and JAVASCRIPT. I alw
 <li>
 Start tracking - who eat the most apple 
 </li>
-<br>
-<li>I want a history log that keeps track of all the games played</li>
-<br>
 <li>
 I want fancy styling and animations when ever snake eat the apple or bump on the wall or obstracel on away.
 </li>
