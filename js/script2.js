@@ -55,7 +55,7 @@ let snake =null;
 let apple =null;
 let newSp =null;
 let newSnake =[];
-let tailLength = 0;
+let tailLength = 1;
 
 
 
@@ -130,6 +130,8 @@ function drawGame() {
     }
     drawScore()
     checkForGameOver()
+    // win()
+
     // handleReset()
     setTimeout(drawGame,1000/speed);
 
@@ -148,7 +150,6 @@ function checkAppleCollision() {
         // console.log('collision');
         apple.x =Math.floor(Math.random() * tileSize);
         apple.y =Math.floor(Math.random() * tileSize);
-        // snake.grow();
         
     }   
 
@@ -221,7 +222,7 @@ function checkForGameOver() {
         }else if(snake.y <0){
             gameOver = true;
             ctx.fillStyle = "Red";
-            ctx.font = "25px Adorn serif";
+            ctx.font = "15px Adorn serif";
             ctx.fillText("Game is Over you hit the TOP wall", canvas.width /6.5, canvas.height / 2);
             ctx.fillText(`Your Score is ${score}`, canvas.width /4, canvas.height / 1.5);
         
@@ -230,7 +231,7 @@ function checkForGameOver() {
         }else if(snake.y >tileCount - 14){
             gameOver = true;
             ctx.fillStyle = "Red";
-            ctx.font = "25px Adorn serif";
+            ctx.font = "15px Adorn serif";
             ctx.fillText("Game is Over you hit the BOTTOM wall", canvas.width /6.5, canvas.height / 2);
             ctx.fillText(`Your Score is ${score}` , canvas.width /4, canvas.height / 1.5);
             
@@ -238,17 +239,17 @@ function checkForGameOver() {
         }else if(snakeParts.x === snake.x && snakeParts.y == snake.y) {
             gameOver = true;
             ctx.fillStyle = "Red";
-            ctx.font = "25px Adorn serif";
+            ctx.font = "15px Adorn serif";
             ctx.fillText("Game is Over you hit your self", canvas.width /6.5, canvas.height / 2);
             ctx.fillText(`Your Score is ${score}` , canvas.width /4, canvas.height / 1.5);
         
         } else if(gameOver === true) {
         ctx.fillStyle = "white";
-        ctx.font = "50px Verdana";
+        ctx.font = "15px Verdana";
 
         if (gameOver === true) {
             ctx.fillStyle = "white";
-            ctx.font = "50px Verdana";
+            ctx.font = "15px Verdana";
 
 }
             var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
@@ -261,9 +262,11 @@ function checkForGameOver() {
             ctx.fillText("Game Over!", canvas.width /3, canvas.height / 2);
             ctx.fillText(`Your Score is ${score}`, canvas.width /3, canvas.height / 1.5);
 
-        }else if(score === 5){
+        }else if(score ===4){
+            
+
             ctx.fillStyle = "blue";
-            ctx.font = "60px georgia ";
+            ctx.font = "15px georgia ";
 
             var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
             gradient.addColorStop("0", " magenta");
@@ -274,8 +277,7 @@ function checkForGameOver() {
         
             ctx.fillText("Congrats", canvas.width /3, canvas.height / 2);
             ctx.fillText(`Your Score is ${score}. Great Hit the highest score` , canvas.width /4, canvas.height / 1.5);
-        
-
+    
             
         }
     
@@ -286,43 +288,22 @@ function checkForGameOver() {
 
 function drawScore(){
 
-    if(score <= 3 ){
+    if(score <= 2 ){
+        speed = 2;
+    }
+    else if(score === 3 ){
         speed = 3;
     }
     else if(score === 4 ){
         speed = 4;
     }
-    else if(score === 5 ){
-        speed = 5;
-    }
-
-
-    // else if(score === 6 ){
-    //     speed = 6;
-    // }
-    // else if(score === 7 ){
-    //     speed = 7;
-    // }
-    // else if(score === 8 ){
-    //     speed = 8;
-    // }
-    // else if(score === 9 ){
-    //     speed = 9;
-    // }
-    // else if(score === 10 ){
-    //     speed = 10;
-    // }
-    // else (checkWallCollision === snake){
-    //     gameOver =true;
-    // }
-
 
     ctx.fillStyle = "white";
     ctx.font = "10px Verdana"
     ctx.fillText("Score " + score, canvas.width-50, 10);
 
 
-
+// win()
 
 
 }
@@ -361,11 +342,19 @@ function keyDown(event) {
         snake.xVelocity= 1;
     }
     // event listeners
-
-
-
-
 }
+
+
+// function win() {
+//     if(score===4)
+//     gameOver =false
+// }
+
+
+
+
+
+
 function init() {
     gameOver = false;
     score =0;
